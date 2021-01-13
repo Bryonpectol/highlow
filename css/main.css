@@ -53,10 +53,28 @@ main {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    height: 47.5vh;
+    /* height: 80vh; */
 }
 
-#response {
+.skillsh1 {
+    margin-top: 6vh;
+}
+
+.skillsli {
+    list-style-type: circle;
+    margin: 4vh;
+    width: 40%;
+    margin-left: 30%;
+}
+
+.answers {
+    margin-top: 5vh;
+}
+
+.ansImg {
+    width: 10%;
+    text-align: center;
+    margin-left: 45%;
     margin-top: 5vh;
 }
 

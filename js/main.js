@@ -7,6 +7,12 @@ let Starrt = document.getElementById("startBtn");
 
 let ResponsE = document.getElementById("response");
 
+let RibbonText = document.getElementById("ribbon");
+
+let IMG = document.getElementById("img");
+
+let ribbonNum = 0;
+
 h1Main.textContent = "Number Guessing Game";
 h2Main.textContent = "Are You Smarter Than A Computer?";
 
@@ -28,6 +34,7 @@ let test = generateRandom(1, 15);
 
 function start() {
 
+    ribbonNum++;
 
     // Starrt.style.visibility = "hidden";
 
@@ -37,7 +44,7 @@ function start() {
         alert("Please use a number between 1 and 15!");
     }
 
-    console.log("You entered: " + userInput + ". But the real answer was: " + test);
+    console.log(ribbonNum);
 
     if(userInput < test) {
         ResponsE.textContent = "Your guess was too low.";
@@ -55,11 +62,25 @@ function start() {
         ResponsE.textContent = "You are correct! The Answer was: " + test;
         ResponsE.style.color = "lightgreen";
         Starrt.textContent = "YAY!";
+
+        const Ribbon = ribbonNum;
+        switch(Ribbon) {
+            case 1 :
+            case 2 :
+            case 3 :
+                RibbonText.textContent = "It took you " + ribbonNum + " tries to get it correct!";
+                IMG.setAttribute("src", "/media/images/blue.png");
+            break;
+            case 4 :
+            case 5 :
+            case 6 :
+                RibbonText.textContent = "It took you " + ribbonNum + " tries to get it correct!";
+                IMG.setAttribute("src", "/media/images/red.png");
+            break;
+            default:
+                RibbonText.textContent = "It took you " + ribbonNum + " tries to get it correct!";
+                IMG.setAttribute("src", "/media/images/yellow.png");
+        }
     }
-
-}
-
-function submitt() {
-
 
 }
